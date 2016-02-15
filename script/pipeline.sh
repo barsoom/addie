@@ -12,20 +12,18 @@ function _main {
 
   # Execute build command
   $command_to_run
-  $exit_status = $?
 
   # Report if the build succeeded of failed
-  if [[ $exit_status == 0 ]]; then
+  if [[ $? == 0 ]]; then
     _post_build_status "successful"
   else
     _post_build_status "failed"
+    exit 1
   fi
-
-  return $exit_status
 }
 
 function _post_build_status {
   curl --request POST "$PIPELINE_BASE_URL/api/build_status" --data "token=$PIPELINE_API_TOKEN&name=$build_name&repository=git@github.com:$CIRCLE_PROJECT_USERNAME/${CIRCLE_PROJECT_REPONAME}.git&revision=$CIRCLE_SHA1&status_url=https://circleci.com/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM&status=$1"
 }
 
-exit _main
+_main
