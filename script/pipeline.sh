@@ -1,4 +1,4 @@
-#!/bin/bashj
+#!/bin/bash
 
 # Script to report build status to pipeline (a dashboard for CI status)
 # See more at: https://github.com/barsoom/pipeline
