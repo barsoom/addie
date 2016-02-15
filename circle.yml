@@ -1,5 +1,9 @@
+test:
+  override:
+    ./script/pipeline.sh addie_tests rake
+
 deployment:
   production:
     branch: master
-    heroku:
-      appname: auctionet-addie
+    commands:
+      ./script/pipeline.sh addie_deploy_production "git push git@heroku.com:${HEROKU_APP_NAME}.git $CIRCLE_SHA1:refs/heads/master"
