@@ -15,7 +15,13 @@ bundle exec foreman start
 ## Deployment to Heroku
 
 ```bash
-todo
+heroku apps:create <your app name> --region eu  # change region if needed
+heroku config:set HONEYBADGER_API_KEY=<key here>
+
+# To enable lookups thru postnummerservice.se set the api key.
+heroku config:set POSTNUMMERSERVICE_API_KEY=<key here>
+
+git push heroku
 ```
 
 ## Credits and license
