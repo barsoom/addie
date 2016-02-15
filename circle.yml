@@ -1,6 +1,6 @@
 test:
   override:
-    - ./script/pipeline.sh addie_tests rake
+    - ./script/pipeline.sh addie_tests 'bundle exec rake'
 
 deployment:
   production:
