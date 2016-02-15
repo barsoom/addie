@@ -12,4 +12,5 @@ gem "honeybadger"
 group :development, :test do
   gem "rspec"
   gem "dotenv"
+  gem "foreman"
 end

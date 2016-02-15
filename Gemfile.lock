@@ -11,6 +11,8 @@ GEM
     diff-lcs (1.2.5)
     dotenv (2.1.0)
     enumerable-lazy (0.0.1)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     honeybadger (2.4.1)
     httparty (0.13.7)
       json (~> 1.8)
@@ -69,6 +71,7 @@ DEPENDENCIES
   activesupport
   attr_extras
   dotenv
+  foreman
   honeybadger
   httparty
   padrino-core
