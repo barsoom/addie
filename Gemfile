@@ -8,9 +8,9 @@ gem "attr_extras"
 gem "activesupport"
 gem "unicorn"
 gem "honeybadger"
+gem "dotenv"
 
 group :development, :test do
   gem "rspec"
-  gem "dotenv"
   gem "foreman"
 end
