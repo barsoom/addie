@@ -1,3 +1,10 @@
+# Avoid running heroku update on each build
+dependencies:
+  pre:
+    - heroku update
+  cache_directories:
+    - ~/.heroku
+
 test:
   override:
     - script/pipeline.sh addie_tests 'bundle exec rake'
