@@ -10,6 +10,10 @@ module Addie
       "Fail"
     end
 
+    get "/revision" do
+      ENV.fetch("GIT_COMMIT")
+    end
+
     get "/boom" do
       raise "Sinatra has left the building"
     end
