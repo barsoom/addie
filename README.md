@@ -9,7 +9,7 @@ Sinatra/Padrino app that works as a address lookup service, that in turn calls o
 ```bash
 bundle
 rake  # To run rspec tests
-bundle exec foreman start
+bundle exec foreman start  # To start web server
 ```
 
 ## Deployment to Heroku
@@ -23,6 +23,22 @@ heroku config:set POSTNUMMERSERVICE_API_KEY=<key here>
 
 git push heroku
 ```
+
+## Continuous integration
+
+We tend to use [CircleCI](https://circleci.com/).
+
+You find our [config.yml](https://circleci.com/docs/config-sample) [here](circle.yml).
+
+It's set up to be generic, so you should be able to deploy to your own heroku app without changing anything in this repo (it's all environment variables).
+
+To make heroku deploy work you have to set `$HEROKU_APP_NAME`.
+
+## Using pipeline as a dashboard for CI status
+
+If you set `$PIPELINE_BASE_URL` (ex. https://your-pipeline-app.herokuapp.com), and `$PIPELINE_API_TOKEN` the circleci scripts will report the build status to that app.
+
+Find out more about [pipeline](https://github.com/barsoom/pipeline).
 
 ## Credits and license
 

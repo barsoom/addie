@@ -6,6 +6,12 @@
 build_name=$1
 command_to_run=$2
 
+# Shortcut to just run the build command if pipeline is not configured
+if [[ ! -v "PIPELINE_API_TOKEN" ]]; then
+  $command_to_run || exit 1
+  exit 0
+fi
+
 function _main {
   # Report start of build
   _post_build_status "building"
