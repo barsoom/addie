@@ -3,7 +3,7 @@ require "honeybadger"
 module Addie
   class App < Padrino::Application
     get "/" do
-      "hello world"
+      %{Address lookup service, see more at <a href="https://github.com/barsoom/addie">https://github.com/barsoom/addie</a>}
     end
 
     get "/boom" do
