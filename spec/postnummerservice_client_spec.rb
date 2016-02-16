@@ -30,6 +30,7 @@ describe PostnummerserviceClient, ".suggest_address" do
     allow(HTTParty).to receive(:get).and_return(response)
 
     result = PostnummerserviceClient.suggest_address(lookup_street: "Kungs")
+    raise 'fail test on purpose to test ci'
     expect(result).to eq(response)
   end
 
