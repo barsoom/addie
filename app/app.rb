@@ -7,7 +7,7 @@ module Addie
     end
 
     get "/api/v1/lookup" do
-      "Fail"
+      "Norrby"
     end
 
     get "/revision" do
