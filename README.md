@@ -18,6 +18,9 @@ bundle exec foreman start  # To start web server
 heroku apps:create <your app name> --region eu  # change region if needed
 heroku config:set HONEYBADGER_API_KEY=<key here>
 
+# Set the URLs of web pages that should be able to call to this service using AJAX calls.
+heroku config:set ALLOWED_ORIGIN_URLS="http://example.com http://staging.example.com"
+
 # To enable lookups thru postnummerservice.se set the api key.
 heroku config:set POSTNUMMERSERVICE_API_KEY=<key here>
 
