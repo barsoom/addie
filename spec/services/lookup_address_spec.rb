@@ -6,7 +6,7 @@ describe Addie::LookupAddress do
     result = Addie::LookupAddress.call(country_code: "TEST", street: "Street")
     expect(result).to eq({
       suggestions: [
-        { street: "Kungsgatan", zipCode: "12345", city: "Norrby" },
+        { street: "Kungsgatan 321", zipCode: "12345", city: "Norrby" },
       ]
     })
   end

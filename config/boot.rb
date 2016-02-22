@@ -7,7 +7,7 @@ require "bundler/setup"
 Bundler.require(:default, RACK_ENV)
 
 # Add paths to padrino autoloading/reloading
-Padrino.dependency_paths << Padrino.root("app/services/**/*.rb")
+Padrino.dependency_paths << Padrino.root("app/services/**/*.rb") << Padrino.root("lib/**/*.rb")
 
 Dotenv.load
 Padrino.load!
