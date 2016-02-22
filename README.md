@@ -4,6 +4,12 @@
 
 Sinatra/Padrino app that works as a address lookup service, that in turn calls out to different external APIs depending on the query and how you've configured this app.
 
+## How the api works
+
+    # street: Partially entered street name
+    # country_code: Two letter country code upper cased. Is used to pick the correct external address lookup service.
+    GET /api/v1/lookup?street=foo&country_code=SE
+
 ## Development
 
 ```bash
