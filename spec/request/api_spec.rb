@@ -11,7 +11,7 @@ def app
 end
 
 describe "API", type: :rack_test do
-  it "returns suggestions given a street" do
+  it "returns suggestions given a street and a country code" do
     expected = {
       suggestions: [
         { street: "Kungs Barkarö Kyrka", zipCode: "73693", city: "Kungsör" },
@@ -21,6 +21,7 @@ describe "API", type: :rack_test do
     }
 
     get "/api/v1/lookup?street=Kungs&country_code=SE"
+    expect(last_response.status).to eq(200)
     data = JSON.parse(last_response.body, symbolize_names: true)
     pending
     expect(data).to eq(expected)
