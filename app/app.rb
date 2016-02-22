@@ -1,7 +1,7 @@
 module Addie
   class App < Padrino::Application
     get "/" do
-      %{Address lookup service, see more at <a href="https://github.com/barsoom/addie">https://github.com/barsoom/addie</a>}
+      %{<a href="/api/v1/lookup?street=Kung&country_code=SE">Address lookup</a> service, see more at <a href="https://github.com/barsoom/addie">https://github.com/barsoom/addie</a>.}
     end
 
     get "/revision" do
