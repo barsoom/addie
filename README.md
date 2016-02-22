@@ -23,11 +23,12 @@ For supported countries the response will be `200 OK` and look like this:
 }
 ```
 
-For unsupported countries (and other possible errors related to an invalid request), the response will be `400 Bad Request` and look like this:
+For unsupported countries (and other possible errors related to an invalid request), the response will be an empty `200 OK`:
 
 ```
 {
-  "error": "Some error text about this"
+  "suggestions": [
+  ]
 }
 ```
 
