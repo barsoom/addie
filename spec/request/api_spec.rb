@@ -20,7 +20,7 @@ describe "API", type: :rack_test do
       ]
     }
 
-    get "/api/v1/lookup/?street=Kungs"
+    get "/api/v1/lookup?street=Kungs&country_code=SE"
     data = JSON.parse(last_response.body, symbolize_names: true)
     pending
     expect(data).to eq(expected)
