@@ -1,6 +1,7 @@
 require "attr_extras"
 
-$: << "app/services" << "lib"
+$: << "app/services"
+$: << "lib"
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
