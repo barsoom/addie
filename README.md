@@ -11,9 +11,27 @@ Sinatra/Padrino app that works as a address lookup service, that in turn calls o
 
 ```
 GET /api/v1/lookup?street=foo&country_code=SE
-
-TODO: show response
 ```
+
+For supported countries the response will be `200 OK` and look like this:
+
+```
+{
+  "suggestions": [
+    { "street": "Street name", "zipCode": "12345", "city": "City name" }
+  ]
+}
+```
+
+For unsupported countries (and other possible errors related to an invalid request), the response will be `400 Bad Request` and look like this:
+
+```
+{
+  "error": "Some error text about this"
+}
+```
+
+If the service has an error, or the the services this service depends on is down, the response will be `500 Internal Server Error`.
 
 ## Development
 
