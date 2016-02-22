@@ -5,7 +5,7 @@ module Addie
     end
 
     get "/api/v1/lookup" do
-      AddressLookup.call(
+      LookupAddress.call(
         street: params.fetch("street"),
         country_code: params.fetch("country_code"),
       ).to_json
