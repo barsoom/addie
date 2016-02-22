@@ -1,5 +1,3 @@
-require "honeybadger"
-
 module Addie
   class App < Padrino::Application
     get "/" do
@@ -7,7 +5,7 @@ module Addie
     end
 
     get "/api/v1/lookup" do
-      "Norrby"
+      { data: "Norrby" }.to_json
     end
 
     get "/revision" do
