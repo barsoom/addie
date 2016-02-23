@@ -7,7 +7,7 @@ Sinatra/Padrino app that works as a address lookup service, that in turn calls o
 ## How the API works
 
 - `street`: Partially entered street name
-- `country_code`: Two letter country code upper cased. Is used to pick the correct external address lookup service.
+- `country_code`: [Two letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) upper cased. Is used to pick the correct external address lookup service.
 
 ```
 GET /api/v1/lookup?street=foo&country_code=SE
