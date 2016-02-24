@@ -1,9 +1,9 @@
 require "spec_helper"
-require "lookup_address"
+require "look_up_address"
 
-describe Addie::LookupAddress do
+describe Addie::LookUpAddress do
   it "returns results by the given country code" do
-    result = Addie::LookupAddress.call(country_code: "TEST", street: "Street")
+    result = Addie::LookUpAddress.call(country_code: "TEST", street: "Street")
     expect(result).to eq({
       suggestions: [
         { street: "Kungsgatan 321", zipCode: "12345", city: "Norrby" },
@@ -12,7 +12,7 @@ describe Addie::LookupAddress do
   end
 
   it "returns an empty result for unhandled countries" do
-    result = Addie::LookupAddress.call(country_code: "ZZ", street: "Street")
+    result = Addie::LookUpAddress.call(country_code: "ZZ", street: "Street")
     expect(result).to eq({
       suggestions: []
     })

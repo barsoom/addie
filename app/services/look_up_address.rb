@@ -1,5 +1,5 @@
 module Addie
-  class LookupAddress
+  class LookUpAddress
     method_object [ :street!, :country_code! ]
 
     class FakeLookup
