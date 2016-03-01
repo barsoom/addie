@@ -18,5 +18,12 @@ module Addie
         country_code: params.fetch("country_code"),
       ).to_json
     end
+
+    get "/api/v1/validate" do
+      {
+        valid: true,
+        message: "",
+      }.to_json
+    end
   end
 end

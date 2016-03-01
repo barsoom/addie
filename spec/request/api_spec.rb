@@ -25,4 +25,18 @@ describe "API", type: :rack_test do
     data = JSON.parse(last_response.body, symbolize_names: true)
     expect(data).to eq(expected)
   end
+
+  it "returns a validation given a street, zip code and city" do
+    expected = {
+      valid: true,
+      message: "",
+    }
+
+    get "/api/v1/validate?street=Grev%20Turegatan%2044&zip_code=11438&city=Stockholm&country_code=TEST"
+
+    expect(last_response.status).to eq(200)
+
+    data = JSON.parse(last_response.body, symbolize_names: true)
+    expect(data).to eq(expected)
+  end
 end
