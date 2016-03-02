@@ -32,7 +32,7 @@ describe "API", type: :rack_test do
       message: "",
     }
 
-    get "/api/v1/validate?street=Grev%20Turegatan%2044&zip_code=11438&city=Stockholm&country_code=TEST"
+    get "/api/v1/validate?street=Kungsgatan%20321&zip_code=12345&city=Norrby&country_code=TEST"
 
     expect(last_response.status).to eq(200)
 
