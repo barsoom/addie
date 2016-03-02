@@ -54,6 +54,9 @@ heroku config:set ALLOWED_ORIGIN_URLS="http://example.com http://staging.example
 # To enable lookups thru postnummerservice.se set the api key.
 heroku config:set POSTNUMMERSERVICE_API_KEY=<key here>
 
+# To change the maximum number of results:
+#heroku config:set POSTNUMMERSERVICE_MAX_RESULTS=50
+
 git push heroku
 ```
 
