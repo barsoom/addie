@@ -39,4 +39,17 @@ describe "API", type: :rack_test do
     data = JSON.parse(last_response.body, symbolize_names: true)
     expect(data).to eq(expected)
   end
+
+  it "returns a Bad Request (400) error if one or more of the required arguements is missing" do
+    expected = {
+      error: "Missing parameter: street"
+    }
+
+    get "/api/v1/lookup?country_code=TEST"
+
+    expect(last_response.status).to eq(400)
+
+    data = JSON.parse(last_response.body, symbolize_names: true)
+    expect(data).to eq(expected)
+  end
 end
