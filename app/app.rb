@@ -20,10 +20,12 @@ module Addie
     end
 
     get "/api/v1/validate" do
-      {
-        valid: true,
-        message: "",
-      }.to_json
+      ValidateAddress.call(
+        street: params.fetch("street"),
+        zip_code: params.fetch("zip_code"),
+        city: params.fetch("city"),
+        country_code: params.fetch("country_code"),
+      ).to_json
     end
   end
 end
