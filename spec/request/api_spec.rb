@@ -27,10 +27,7 @@ describe "API", type: :rack_test do
   end
 
   it "returns a validation given a street, zip code and city" do
-    expected = {
-      valid: true,
-      message: "",
-    }
+    expected = { status: "valid" }
 
     get "/api/v1/validate?street=Kungsgatan%20321&zip_code=12345&city=Norrby&country_code=TEST"
 

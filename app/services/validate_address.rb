@@ -4,9 +4,9 @@ module Addie
 
     def call
       if valid_address?
-        { valid: true, message: "", }
+        { status: "valid" }
       else
-        { valid: false, message: "No match!", }
+        { status: "invalid" }
       end
     end
 
