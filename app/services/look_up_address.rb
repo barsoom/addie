@@ -1,5 +1,3 @@
-require "postnummerservice_client"
-
 module Addie
   class LookUpAddress
     method_object [ :street!, :country_code! ]

@@ -1,5 +1,3 @@
-require "look_up_address"
-
 module Addie
   class ValidateAddress
     method_object [ :street!, :zip_code!, :city!, :country_code! ]

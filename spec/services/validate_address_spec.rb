@@ -1,4 +1,6 @@
 require "spec_helper"
+require "postnummerservice_client"
+require "look_up_address"
 require "validate_address"
 
 describe Addie::ValidateAddress do
