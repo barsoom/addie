@@ -18,7 +18,7 @@ describe "API", type: :rack_test do
       ]
     }
 
-    get "/api/v1/lookup?street=Kungs&country_code=TEST"
+    get "/api/v1/look_up?street=Kungs&country_code=TEST"
 
     expect(last_response.status).to eq(200)
 
@@ -45,7 +45,7 @@ describe "API", type: :rack_test do
       error: "Missing parameter: street"
     }
 
-    get "/api/v1/lookup?country_code=TEST"
+    get "/api/v1/look_up?country_code=TEST"
 
     expect(last_response.status).to eq(400)
 

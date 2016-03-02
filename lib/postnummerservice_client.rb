@@ -1,8 +1,8 @@
 class PostnummerserviceClient
-  static_facade :lookup,
+  static_facade :look_up,
     [ :street!, :country_code, :endpoint ]
 
-  def lookup
+  def look_up
     endpoint.suggest_by_street(street).fetch(:response)
       .fetch(:suggestions).map { |suggestion_line|
       {

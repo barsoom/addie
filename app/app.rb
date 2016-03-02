@@ -1,7 +1,7 @@
 module Addie
   class App < Padrino::Application
     get "/" do
-      %{<a href="/api/v1/lookup?street=Kung&country_code=SE">Address lookup</a> service, see more at <a href="https://github.com/barsoom/addie">https://github.com/barsoom/addie</a>.}
+      %{<a href="/api/v1/look_up?street=Kung&country_code=SE">Address lookup</a> service, see more at <a href="https://github.com/barsoom/addie">https://github.com/barsoom/addie</a>.}
     end
 
     get "/revision" do
@@ -12,7 +12,7 @@ module Addie
       raise "Sinatra has left the building"
     end
 
-    get "/api/v1/lookup" do
+    get "/api/v1/look_up" do
       LookUpAddress.call(
         street: params_fetch("street"),
         country_code: params_fetch("country_code"),

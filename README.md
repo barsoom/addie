@@ -2,15 +2,15 @@
 
 # Addie
 
-Sinatra/Padrino app that works as a address lookup service, that in turn calls out to different external APIs depending on the query and how you've configured this app.
+Sinatra/Padrino app that works as a address look up service, that in turn calls out to different external APIs depending on the query and how you've configured this app.
 
 ## How the API works
 
 - `street`: Partially entered street name
-- `country_code`: [Two letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) upper cased. Is used to pick the correct external address lookup service.
+- `country_code`: [Two letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) upper cased. Is used to pick the correct external address look up service.
 
 ```
-GET /api/v1/lookup?street=foo&country_code=SE
+GET /api/v1/look_up?street=foo&country_code=SE
 ```
 
 For supported countries the response will be `200 OK` and look like this:

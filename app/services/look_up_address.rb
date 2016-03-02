@@ -2,8 +2,8 @@ module Addie
   class LookUpAddress
     method_object [ :street!, :country_code! ]
 
-    class FakeLookup
-      def self.lookup(street:, country_code:)
+    class FakeLookUp
+      def self.look_up(street:, country_code:)
         [
           { street: "Kungsgatan 321", zipCode: "12345", city: "Norrby" }
         ]
@@ -11,20 +11,20 @@ module Addie
     end
 
     class NullService
-      def self.lookup(street:, country_code:)
+      def self.look_up(street:, country_code:)
         []
       end
     end
 
-    LOOKUP_SERVICES_BY_COUNTRY_CODE = {
+    LOOK_UP_SERVICES_BY_COUNTRY_CODE = {
       "SE" => PostnummerserviceClient,
-      "TEST" => FakeLookup,
+      "TEST" => FakeLookUp,
     }
 
     def call
-      suggestions = LOOKUP_SERVICES_BY_COUNTRY_CODE.
+      suggestions = LOOK_UP_SERVICES_BY_COUNTRY_CODE.
         fetch(country_code, NullService).
-        lookup(street: street, country_code: country_code)
+        look_up(street: street, country_code: country_code)
 
       {
         suggestions: suggestions
