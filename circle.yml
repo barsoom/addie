@@ -3,7 +3,8 @@ test:
     - script/pipeline.sh addie_tests 'bundle exec rake'
 
 deployment:
-  production:
+  staging_and_production:
     branch: master
     commands:
-      - script/pipeline.sh addie_deploy_production "script/deploy.sh"
+      - script/pipeline.sh addie_deploy_staging "script/deploy.sh $HEROKU_APP_NAME-staging"
+      - script/pipeline.sh addie_deploy_production "script/deploy.sh $HEROKU_APP_NAME"
