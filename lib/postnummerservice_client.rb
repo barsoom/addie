@@ -3,8 +3,11 @@ class PostnummerserviceClient
     [ :street!, :country_code, :endpoint ]
 
   def look_up
-    endpoint.suggest_by_street(street).fetch(:response)
-      .fetch(:suggestions).map { |suggestion_line|
+    endpoint.
+    suggest_by_street(street).
+    fetch(:response).
+    fetch(:suggestions).
+    map { |suggestion_line|
       {
         street:  suggestion_line.fetch(:street),
         zipCode: suggestion_line.fetch(:postalcode),
