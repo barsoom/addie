@@ -2,9 +2,10 @@ test:
   override:
     - script/pipeline.sh addie_tests "bundle exec rake"
 
-deployment:
-  staging_and_production:
-    branch: master
-    commands:
-      - script/pipeline.sh addie_deploy_staging "script/deploy.sh $HEROKU_APP_NAME-staging"
-      - script/pipeline.sh addie_deploy_production "script/deploy.sh $HEROKU_APP_NAME"
+# Disabled until we use this again, it's breaking CI
+#deployment:
+#  staging_and_production:
+#    branch: master
+#    commands:
+#      - script/pipeline.sh addie_deploy_staging "script/deploy.sh $HEROKU_APP_NAME-staging"
+#      - script/pipeline.sh addie_deploy_production "script/deploy.sh $HEROKU_APP_NAME"
