@@ -1,8 +1,12 @@
 # Addie
 
+---
 **NOTE:** This project is not active, meaning we're not paying for the postnummerservice anymore.
 In order to be able to keep the repo dependencies (like gems) up to date, we've removed the
 [smoke tests](script/smoke_test.sh) since they're dependent that the service is up and running.
+
+If you make it active again, please [activate vulnerability alerts](https://github.com/barsoom/addie/settings).
+---
 
 Sinatra/Padrino app that works as a address look up service, that in turn calls out to different external APIs depending on the query and how you've configured this app.
 
